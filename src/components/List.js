@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useQuery } from "react-query";
 import ListCard from "./ListCard";
-import MyNav from './MyNav'
+import MyNav from "./MyNav";
 import PokemonProfile from "./PokemonProfile";
 
 const fetchData = async (key) => {
@@ -25,47 +25,68 @@ const List = () => {
   return (
     <div>
       {activePage === "profile" ? (
-        <PokemonProfile setActivePage={setActivePage} id= {getId} prevData = {data}/>
+        <PokemonProfile
+          setActivePage={setActivePage}
+          id={getId}
+          prevData={data}
+        />
       ) : (
         <div>
-          <MyNav/>
-          <h1 className = "text-info" style = {{ textAlign: 'center', padding: '30px'}}>Pokemons</h1>
-          {status === "loading" && <p style = {{color: 'white'}}>Loading...</p>}
-          {status === "error" && <p style = {{color: 'white'}}>Error while fetching data</p>}
-          {status === "success" && (
-            <div className = "listCardWrapper">
-              {data.results.map((entry, index) => {
-               return (
-               <ListCard
-                  key={index}
-                  name={entry.name}
-                  setActivePage={setActivePage}
-                  setId = {setId}
-                  id = {index}
-                />
-               );
-                
-})}
-            
-            <div style = {{textAlign: 'center', marginTop: '30px'}}>
-           
-              <Button className = "text-primary"
-                variant="dark"
-                onClick={() => setPage(old => old === 0?  old : old - 1)}
-                disabled = {page === 0}
-                >
-                Prev
-              </Button>    <span style = {{padding: '20px', color: 'white'}}>{page}</span>
-               <Button  className = "text-primary" variant="dark"
-               onClick={() => setPage((old) => old ===39? old : old + 1)}
-               disabled = {page === 40}
-               >
-                Next
-              </Button>
-            </div></div>
+          <MyNav />
+          <h1
+            className="text-info"
+            style={{ textAlign: "center", padding: "30px" }}
+          >
+            Pokemons
+          </h1>
+          {status === "loading" && <p style={{ color: "white" }}>Loading...</p>}
+          {status === "error" && (
+            <p style={{ color: "white" }}>Error while fetching data</p>
           )}
-        </div>  
+          {status === "success" && (
+            <div className="listCardWrapper">
+              {data.results.map((entry, index) => {
+                return (
+                  <ListCard
+                    key={index}
+                    name={entry.name}
+                    setActivePage={setActivePage}
+                    setId={setId}
+                    id={index}
+                  />
+                );
+              })}
+
+              <div style={{ textAlign: "center", marginTop: "30px" }}>
+                <Button
+                  className="text-primary"
+                  variant="dark"
+                  onClick={() => setPage((old) => (old === 0 ? old : old - 1))}
+                  disabled={page === 0}
+                >
+                  Prev
+                </Button>{" "}
+                <span style={{ padding: "20px", color: "white" }}>{page}</span>
+                <Button
+                  className="text-primary"
+                  variant="dark"
+                  onClick={() => setPage((old) => (old === 39 ? old : old + 1))}
+                  disabled={page === 40}
+                >
+                  Next
+                </Button>
+              </div>
+             
+            </div>
+          )}
+          <footer style = {{color: 'white', display: 'flex', justifyContent: 'center', margin: '30px'}}>
+                <span>©copyright|</span>
+                <span>Amrit Kaphle</span>
+              </footer>
+        </div>
       )}
+
+       
     </div>
   );
 };
