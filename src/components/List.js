@@ -55,7 +55,7 @@ const List = () => {
                 disabled = {page === 0}
                 >
                 Prev
-              </Button>    <span className = "text-secondary" style = {{padding: '20px', color: 'white'}}>{page}</span>
+              </Button>    <span style = {{padding: '20px', color: 'white'}}>{page}</span>
                <Button  className = "text-primary" variant="dark"
                onClick={() => setPage((old) => old ===39? old : old + 1)}
                disabled = {page === 40}
