@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+visit Live site [click here](https://pokemonshere.netlify.app/).
 
 ## Available Scripts
 
