@@ -1,5 +1,4 @@
 import React from "react";
-import Img1 from "../assets/a.png";
 
 const ListCard = ({ name, setActivePage, setId, id }) => {
   const url = `https://img.pokemondb.net/sprites/bank/normal/${name}.png`;
