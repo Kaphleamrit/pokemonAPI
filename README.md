@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Pokemons
 
 visit Live site [click here](https://pokemonshere.netlify.app/).
 
