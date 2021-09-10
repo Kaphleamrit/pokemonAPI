@@ -12,7 +12,7 @@ const ListCard = ({ name, setActivePage, setId, id }) => {
       style={{ cursor: "pointer" }}
     >
       <img src={url} alt={name} />
-      <h3 className= "text-warning">{name}</h3>
+      <h3 style = {{color: 'white'}}>{name}</h3>
     </div>
   );
 };

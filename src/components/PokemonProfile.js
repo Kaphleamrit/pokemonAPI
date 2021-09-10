@@ -17,9 +17,9 @@ function PokemonProfile({ setActivePage, id, prevData }) {
   });
 
   return (
-    <>
-    {status === "loading" && <p>Loading...</p>}
-      {status === "error" && <p>Error while fetching data</p>}
+    <div className = "pokemonProfile">
+    {status === "loading" && <p style = {{color: 'white'}}>Loading...</p>}
+      {status === "error" && <p style = {{color: 'white'}}>Error while fetching data</p>}
       {status === "success" &&  
       <Alert show={true} variant="dark" >
         <Alert.Heading>{data.name}</Alert.Heading>
@@ -49,7 +49,7 @@ function PokemonProfile({ setActivePage, id, prevData }) {
       </Alert>
 
   }
-    </>
+    </div>
   );
 }
 

@@ -30,8 +30,8 @@ const List = () => {
         <div>
           <MyNav/>
           <h1 className = "text-info" style = {{ textAlign: 'center', padding: '30px'}}>Pokemons</h1>
-          {status === "loading" && <p>Loading...</p>}
-          {status === "error" && <p>Error while fetching data</p>}
+          {status === "loading" && <p style = {{color: 'white'}}>Loading...</p>}
+          {status === "error" && <p style = {{color: 'white'}}>Error while fetching data</p>}
           {status === "success" && (
             <div className = "listCardWrapper">
               {data.results.map((entry, index) => {
@@ -55,7 +55,7 @@ const List = () => {
                 disabled = {page === 0}
                 >
                 Prev
-              </Button>    <span className = "text-secondary" style = {{padding: '20px'}}>{page}</span>
+              </Button>    <span className = "text-secondary" style = {{padding: '20px', color: 'white'}}>{page}</span>
                <Button  className = "text-primary" variant="dark"
                onClick={() => setPage((old) => old ===39? old : old + 1)}
                disabled = {page === 40}
@@ -64,7 +64,7 @@ const List = () => {
               </Button>
             </div></div>
           )}
-        </div>
+        </div>  
       )}
     </div>
   );
