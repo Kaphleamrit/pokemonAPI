@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { Button } from "react-bootstrap";
 import { useQuery } from "react-query";
 import ListCard from "./ListCard";
+import MyNav from './MyNav'
 import PokemonProfile from "./PokemonProfile";
 
 const fetchData = async (key) => {
@@ -27,8 +28,8 @@ const List = () => {
         <PokemonProfile setActivePage={setActivePage} id= {getId} prevData = {data}/>
       ) : (
         <div>
-          {" "}
-          <h1 className = "text-info" style = {{ textAlign: 'center'}}>Pokemons</h1>
+          <MyNav/>
+          <h1 className = "text-info" style = {{ textAlign: 'center', padding: '30px'}}>Pokemons</h1>
           {status === "loading" && <p>Loading...</p>}
           {status === "error" && <p>Error while fetching data</p>}
           {status === "success" && (
