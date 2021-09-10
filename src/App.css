@@ -31,10 +31,16 @@
 
 /* List styles  */
 
-@media screen and (min-width: 769px){ 
+@media screen and (min-width: 1024px){ 
 
     .listCard {
-        width: 30%;
+        width: 40%;
+    }
+
+    .listCardWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
     }
 }
 

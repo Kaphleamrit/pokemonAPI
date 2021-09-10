@@ -32,7 +32,7 @@ const List = () => {
           {status === "loading" && <p>Loading...</p>}
           {status === "error" && <p>Error while fetching data</p>}
           {status === "success" && (
-            <div>
+            <div className = "listCardWrapper">
               {data.results.map((entry, index) => {
                return (
                <ListCard
